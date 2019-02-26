@@ -1,0 +1,66 @@
+<div>
+  <p>
+    direct-chk works!
+  </p>
+
+  <!-- if: ngIf : control the visibility / availability of any HTML component-->
+  <div *ngIf="a>b">
+    This is some div content 1
+  </div>
+
+  <div *ngIf="valid">
+    This is some div content 2
+  </div>
+
+  <div *ngIf="false">
+    This is some div content 3
+  </div>
+
+  <div *ngIf="valid; then truthshow; else falseshow"></div>
+  <!-- *ngIf="<condition>; then <true id>; else <false id>"-->
+
+  <!-- Angular ID with # symbol -->
+  <ng-template #truthshow>
+    <div>
+      This is true template
+    </div>
+  </ng-template>
+
+  <ng-template #falseshow>
+    <div>
+      This is false template
+    </div>
+  </ng-template>
+
+  <!--ngSwitch-->
+  <h3>Switch response</h3>
+
+  <div [ngSwitch]="a">
+    <div *ngSwitchCase='5'> Value is 5 </div>
+    <div *ngSwitchCase='10'>Value is 10</div>
+    <div *ngSwitchCase='20'>Value is 20</div>
+    <div *ngSwitchDefault>Value is Default</div>
+  </div>
+
+  <!--ngFor-->
+  <h3>Looping directive ngFor</h3>
+  <!--Component itself will be repeated; in this case div will be repeated
+   Syntax: *ngFor="let <variable> of <arrayname>" 
+   let(ES6) is a keyword which is a replacement of where(ES5/JS) keyword of JS
+  
+  let x=10;
+  const y=50;
+
+  'index' keyword gives the index of the variable
+  -->
+  <div *ngFor="let name of names; let i=index">
+    Name {{i}} is : {{name}}
+  </div>
+
+  <!-- ngNonBindable means the expression will not be evaluated and printed as is
+  Span wont be compiled by angular regulations -->
+  <span ngNonBindable>
+    This is value of variable a: {{a}}
+  </span>
+
+</div>

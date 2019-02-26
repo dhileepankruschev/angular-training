@@ -1,0 +1,19 @@
+{
+    "products":[
+        {
+            "name": "First",
+            "cost": "50",
+            "category": "Category 1"
+        },
+        {
+            "name": "Second",
+            "cost": "60",
+            "category": "Category 2"
+        },
+        {
+            "name": "Third",
+            "cost": "70",
+            "category": "Category 3"
+        }
+    ]
+}

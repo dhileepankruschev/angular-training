@@ -1,0 +1,77 @@
+<div>
+  <h2>Add New Product</h2>
+
+  <!-- 
+    in Model approach , no need to pass arguments to the function
+
+    formgroup created in the ts file should be mapped here
+
+    no need to pass any argument to saveAll() because formgroup is already available in the ts file
+  -->
+  <form [formGroup]="myFrmGrp" (ngSubmit)="saveAll()">
+    <table border="1" width="80%">
+      <tr>
+        <td>Enter Product Name: </td>
+        <!--ngModel will map your HTML component to your Angular Form Control.
+        ngModel is available since FormsModule is imported in app.module.ts
+        
+        ReactiveFormsModule provides special directives such as formGroup and formControl
+         All the form controls inside the formGroup is accessible through an array 'controls'
+
+         txt_prod_name defined in ts file can be directly used here
+        -->
+        <!--<td><input type="text" name="pname" [formControl]="myFrmGrp.controls['prod_name']" /></td>-->
+        <td><input type="text" name="pname" [formControl]="txt_prod_name" /></td>
+      </tr>
+      <tr>
+        <td>Enter Product Cost: </td>
+        <td><input type="text" name="pcost" [formControl]="myFrmGrp.controls['prod_cost']" /></td>
+      </tr>
+      <tr>
+        <td>Enter Product Category: </td>
+        <td><input type="text" name="pcat" [formControl]="myFrmGrp.controls['prod_cat']" /></td>
+      </tr>
+      <tr>
+        <td></td>
+        <!--Button will be enabled only when product name is entered-->
+        <!--<td><input type="submit" value="Save" [disabled]="!txt_prod_name.valid" /></td>-->
+
+        <!-- Button will be enable donly when all the form controls are entered-->
+        <td><input type="submit" value="Save" [disabled]="!myFrmGrp.valid" /></td>
+      </tr>
+    </table>
+  </form>
+  <br>
+  <!--dirty status: denotes if you have done any changes in the page or not-->
+  <!--
+    <div *ngIf="(!txt_prod_name.valid) && txt_prod_name.dirty" style="color: red">
+      Product Name is mandatory !!
+    </div>
+  -->
+
+  <!-- 
+    hasError inbuild function
+    Syntax: .hasError('<validationName>')
+   -->
+  <!--
+  <div *ngIf="txt_prod_name.hasError('required') && txt_prod_name.dirty" style="color: red">
+    Product Name is mandatory !!
+  </div>
+  -->
+
+  <!-- <formGroupName>.valid checks all validations for all form controls
+    returns true only if all validations are true
+    -->
+  <div *ngIf="!myFrmGrp.valid && myFrmGrp.dirty" style="color: red">
+    Enter mandatory fields !!
+  </div>
+
+  <!-- hasError('range') : range is the name returned by rangeCheck function-->
+  <div *ngIf="myFrmGrp.controls['prod_cost'].hasError('range')" style="color: red">
+    Product Cost invalid !!
+  </div>
+
+  <h3>Name : {{name}}</h3>
+  <h3>Cost : {{cost}}</h3>
+  <h3>Category : {{category}}</h3>
+</div>

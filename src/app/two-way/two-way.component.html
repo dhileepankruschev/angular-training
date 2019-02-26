@@ -1,0 +1,18 @@
+<div>
+  <!--
+[] : @Input (receive)
+() : @Output (emit)
+
+Two way interaction : As soon as changes are done to textbox, it will reflected in the HTML
+
+ngModel wrapped within [()]
+
+Not recommended to use in general
+    -->
+  <pre>
+    Your Name: <input type="text" [(ngModel)]="uname"/>
+  </pre>
+
+  <h2>{{uname}}</h2>
+
+</div>

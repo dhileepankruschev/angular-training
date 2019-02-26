@@ -1,0 +1,17 @@
+<div>
+  <input type="button" value="Get Data" (click)="getData()" />
+
+  <h2>
+
+    <!-- Object as such is printed => (object Object)-->
+    {{data}}
+
+    <!-- 'json' pipe converts the object to simple JSON-->
+    {{data | json}}
+
+    <!-- parallel piping -->
+    {{data | json | uppercase}}
+
+    {{products | json | uppercase}}
+  </h2>
+</div>

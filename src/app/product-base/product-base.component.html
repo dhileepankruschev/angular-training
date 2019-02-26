@@ -1,0 +1,47 @@
+<div>
+
+  <!-- addNewProduct shall receive new product info as arg-->
+  <!-- inbuild variable $event : maps itself to the value emitted by event-->
+  <app-product-input (submit_info)="addNewProd($event)"></app-product-input>
+  <app-product-show [products_list]="products"></app-product-show>
+
+  <h2>Add New Product</h2>
+
+  <table border="1" width="80%">
+    <tr>
+      <td>Enter Product Name: </td>
+      <td><input type="text" #name_txt/></td>
+    </tr>
+    <tr>
+      <td>Enter Product Cost: </td>
+      <td><input type="text" #cost_txt/></td>
+    </tr>
+    <tr>
+      <td>Enter Product Category: </td>
+      <td><input type="text" #category_txt/></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="button" value="Save" (click)="saveVal(name_txt,cost_txt,category_txt)" /></td>
+    </tr>
+  </table>
+
+  <h2>Product List</h2>
+
+  <table border="1" width="80%">
+    <thead>
+      <th>NAME</th>
+      <th>COST</th>
+      <th>CATEGORY</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{product.name}}</td>
+        <td>{{product.cost}}</td>
+        <td>{{product.category}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>

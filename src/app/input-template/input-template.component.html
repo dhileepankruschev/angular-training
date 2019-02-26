@@ -1,0 +1,39 @@
+<div>
+  <h2>Add New Product</h2>
+
+  <!-- ngForm maps your HTML form to the Angular Form Group
+  # denotes ID of the Form
+
+  Angular ID needs to represent form group
+
+  frm.value represents an object containing all form controls
+
+  #frm="ngForm" says that the form should be submitted as a Form Group
+  -->
+  <form #frm="ngForm" ngForm (ngSubmit)="saveAll(frm.value)">
+    <table border="1" width="80%">
+      <tr>
+        <td>Enter Product Name: </td>
+        <!--ngModel will map your HTML component to your Angular Form Control.
+        ngModel is available since FormsModule is imported in app.module.ts-->
+        <td><input type="text" name="pname" ngModel/></td>
+      </tr>
+      <tr>
+        <td>Enter Product Cost: </td>
+        <td><input type="text" name="pcost" ngModel/></td>
+      </tr>
+      <tr>
+        <td>Enter Product Category: </td>
+        <td><input type="text" name="pcat" ngModel/></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="Save" /></td>
+      </tr>
+    </table>
+  </form>
+
+  <h3>Name : {{name}}</h3>
+  <h3>Cost : {{cost}}</h3>
+  <h3>Category : {{category}}</h3>
+</div>

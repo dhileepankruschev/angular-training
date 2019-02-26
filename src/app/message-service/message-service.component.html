@@ -1,0 +1,9 @@
+<div>
+  <pre>
+    Message : <input type="text" #txt/>
+    Email: <input type="text" #name/>
+    <input type="button" value="Send" (click)="sendMessage(name,txt)" />
+  </pre>
+
+  <h2>Message: {{message}}</h2>
+</div>

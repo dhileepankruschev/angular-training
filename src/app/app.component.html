@@ -1,0 +1,86 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <h1>
+    Welcome to Angular World!
+  </h1>
+  <!--<app-my-comp></app-my-comp>
+
+  <h2>Directive Check</h2>
+  <app-direct-chk></app-direct-chk>
+  
+  <app-temp-chk></app-temp-chk>
+
+  <app-event-chk></app-event-chk>
+
+  <app-form-input></app-form-input>
+
+  <app-product-base></app-product-base> 
+
+  <app-input-template></app-input-template>
+  
+  <app-input-model></app-input-model>
+
+  <app-two-way></app-two-way>-->
+
+  <!-- Custom directive added -->
+  <!--<div appCustomDirective>This is Div Content</div>
+  <span appCustomDirective>This is inside Span</span>-->
+
+  <!-- plain highlighter custom directive -->
+  <!--<div appHighlighter>This is Div Content</div>-->
+
+  <!--  highlighter custom directive with parameter-->
+  <!--<div appHighlighter hclr='green'>This is Div Content</div>-->
+
+  <!--  highlighter custom directive with parameter assigned directly to directive-->
+  <!--<div appHighlighter='green'>This is Div Content</div>-->
+
+  <!--  highlighter custom directive with parameter which is a variable in .ts file-->
+  <!--<div appHighlighter="{{colour}}">This is Div Content</div>
+
+  <div>
+    <input type="radio" name="hcolours" (click)="colour='blue'" />Blue
+  </div>
+  <div>
+    <input type="radio" name="hcolours" (click)="colour='red'" />Red
+  </div>
+  <div>
+    <input type="radio" name="hcolours" (click)="colour='green'" />Green
+  </div>-->
+
+
+  <!--<app-pipe-check></app-pipe-check>-->
+
+  <!--<app-userservice-child1></app-userservice-child1>
+  <app-userservice-child2></app-userservice-child2>-->
+
+  <!--<app-use-http-comp></app-use-http-comp>-->
+
+  <!--<app-message-service></app-message-service>-->
+
+  <!-- Creating links to support routing
+  href reloads the page. So we wont use it.
+
+  So we will use special input directive : routerLink
+  routerLink will replace href
+
+  ['/home'] will map to corresponding component defined in app.module.ts
+
+  -->
+  <!--<a href="">HOME</a>-->
+  <a [routerLink]="['/home']">HOME</a><br>
+  <a [routerLink]="['/contact']">CONTACT</a><br>
+  <a [routerLink]="['/about']">ABOUT</a><br>
+
+  <!-- Redirecting to a component using a function-->
+  <pre>
+    <input type="text" #srch/>
+    <input type="button" value="Search" (click)="goToSearch(srch)"/>
+  </pre>
+
+  <!-- Container to hold the content of different components.
+  Whatever component is active, the response of that component will be there in router-outlet
+  -->
+  <router-outlet></router-outlet>
+
+</div>

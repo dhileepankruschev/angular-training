@@ -1,0 +1,18 @@
+<div>
+
+  <h2>Product List</h2>
+  <table border="1" width="80%">
+    <thead>
+      <th>NAME</th>
+      <th>COST</th>
+      <th>CATEGORY</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products_list">
+        <td>{{product.name}}</td>
+        <td>{{product.cost}}</td>
+        <td>{{product.category}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

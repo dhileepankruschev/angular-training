@@ -1,0 +1,37 @@
+<div>
+  <!-- Transformation rules can be applied follwed by pipe symbol
+
+  lowercase
+  uppercase
+  currency : <arguments>
+  date
+  percentage
+  decimal
+  slice
+  json
+
+  pipeline extensions will be followed by ':'
+  -->
+  <h3>{{str_data | lowercase}}</h3>
+  <h3>{{str_data | uppercase}}</h3>
+  <h3>{{4367.75 | currency}}</h3>
+  <h3>{{4367.75 | currency:"EURO":true}}</h3>
+  <h3>{{date_data}}</h3>
+  <h3>{{date_data | date}}</h3>
+  <h3>{{date_data | date:'d/M/y'}}</h3>
+  <h3>{{date_data | date:'shortTime'}}</h3>
+  <h3>{{453.13568}}</h3>
+  <h3>{{453.13568 | number}}</h3>
+  <h3>{{453.13568 | number:'3.4'}}</h3>
+  <!-- not different from 3.4 because there are 3 digits before the decimal and it cant be changed-->
+  <h3>{{453.13568 | number:'2.4'}}</h3>
+
+
+  <h3>{{00.345689 | percent}}</h3>
+
+  <!-- Slicing an array syntax=> <array_name | slice:<start_index>:<end_index>-->
+  <h3>{{names | slice:2:5}}</h3>
+
+  <!-- Custom Pipe-->
+  <h3>{{16 | sqrt}}</h3>
+</div>
